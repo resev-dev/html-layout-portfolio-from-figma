@@ -1,0 +1,64 @@
+body {
+	margin: 0;
+	font-family: 'Montserrat', sans-serif; /* прямой шрифт без засечек */
+}
+
+.header {
+	/* таким образом указали родителяля всех absolute-элементов */
+	position: relative; /* для корректного позиционирования стрелки */
+
+	display: flex;
+	flex-direction: column; /* основная ось колонка - ось y */
+	justify-content: center; /* выравнивание по основной оси */
+	align-items: center; /* выравнивание по поперечной оси */
+
+	width: 100%;
+	height: 100vh; /* view hight, т.е. высота от viewport */
+
+	background: #536580;
+	background-image:  url('./../img/header/bg-header.jpg');
+	/*
+	* можно было указать значение contain, чтобы было видно всю картинку, но тогда надо было б отменять
+	* дублирование картинки через: 
+	* background-repeat: no-repeat;
+	* и тогда еще можно делать выравнивание по центру:
+	* background-position: center;
+	*/
+	background-size: cover; /* полностью заполняем блок, растяивая по высоте и сохраняя масштабирование */
+}
+
+.header-title {
+	margin: 0;
+	margin-bottom: 25px;
+	font-weight: 700;
+	font-size: 56px;
+	line-height: 1.3;
+	text-align: center;
+	color: #FFFFFF;
+}
+
+.header-subtitle {
+	margin: 0;
+	font-weight: 700;
+	font-size: 16px;
+	line-height: 1.5;
+	text-align: center;
+	letter-spacing: 0.2em; /* расстояние между символами */
+	text-transform: uppercase;
+	color: #FFFFFF;
+}
+
+.header-arrow {
+	position: absolute; /* относительно relative-элемента, т.е. родителя (по умолчанию родитель body)  */
+	bottom: 30px;
+
+	/* выравнивание по центру */
+	left: 50%;
+	/* margin-left: -24px; чтобы центр по элементу был, а не по его левой части, но жесткая зависимость от размера блока */
+	/* смещене по X и Y */
+	transform: translate(-50%, 0);
+
+	height: 48px;
+	width: 48px;
+	background-color: red;
+}
